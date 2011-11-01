@@ -31,6 +31,21 @@
 	            address: {
 	            	required: " !"                       
 	            },
+	            building: {
+	            	required: " !"                       
+	            },
+	            soi: {
+	            	required: " !"                       
+	            },
+	            road: {
+	            	required: " !"                       
+	            },
+	            district: {
+	            	required: " !"                       
+	            },		  
+	            city: {
+	            	required: " !"                       
+	            },		            
 	            postcode: {
 	            	required: " !",
 	            	number: " !",
