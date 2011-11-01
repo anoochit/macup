@@ -1,9 +1,4 @@
 <?php
-
-require '../../config.php';
-
-// load MacUp class
-$obmc=new MacUp();
  
 $username=$_REQUEST['username'];
 $password=$_REQUEST['password'];

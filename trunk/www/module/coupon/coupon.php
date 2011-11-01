@@ -12,7 +12,6 @@
 	<td>Last Name</td>
 	<td><input type="text" id="lname" name="lname" size="30" class="required"></td>
 </tr>
-<!-- 
 <tr>
 	<td>Gender</td>
 	<td colspan="3">
@@ -22,10 +21,23 @@
 		</select>
 	</td>
 </tr>
- -->
 <tr>
 	<td>Address</td>
-	<td colspan="3"><input type="text" id="address" name="address" size="80"  class="required"></td>
+	<td><input type="text" id="address" name="address" size="30"  class="required"></td>
+	<td>Building</td>
+	<td><input type="text" id="building" name="building" size="30"  class="required"></td>
+</tr>
+<tr>
+	<td>Soi</td>
+	<td><input type="text" id="soi" name="soi" size="30"  class="required"></td>
+	<td>Road</td>
+	<td><input type="text" id="road" name="road" size="30"  class="required"></td>
+</tr>
+<tr>
+	<td>District</td>
+	<td><input type="text" id="district" name="district" size="30"  class="required"></td>
+	<td>City</td>
+	<td><input type="text" id="city" name="city" size="30"  class="required"></td>
 </tr>
 <tr>
 	<td>Province</td>
