@@ -51,8 +51,18 @@ class MacUp {
             echo "<option value='".$item->id."'>".$item->state;
          }
          echo "</select>";
-  		}
-		
+  		}		
+	}
+	
+	function checkFnameLname($fname,$lname){
+		$name=$fname." ".$lname;
+		$obcoupon=new MacCoupon();
+		$res=$obcoupon->Find("name LIKE '".$name."'");
+		if ((count($res))==1){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 
