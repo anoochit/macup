@@ -53,7 +53,7 @@
 </tr>
 <tr>
 	<td> </td>
-	<td><input type="submit" id="add" name="add" value="Add Record"></td>
+	<td><input type="submit" id="add" name="add" value="Add Record" class="submit"></td>
 	<td><div id="result"></div></td>
 </tr>
 </table>
