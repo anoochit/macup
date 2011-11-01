@@ -12,6 +12,7 @@
 	<td>Last Name</td>
 	<td><input type="text" id="lname" name="lname" size="30" class="required"></td>
 </tr>
+<!-- 
 <tr>
 	<td>Gender</td>
 	<td colspan="3">
@@ -21,6 +22,7 @@
 		</select>
 	</td>
 </tr>
+ -->
 <tr>
 	<td>Address</td>
 	<td colspan="3"><input type="text" id="address" name="address" size="80"  class="required"></td>

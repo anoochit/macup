@@ -62,7 +62,7 @@
 			$.ajax({
 				  url: "/coupon/check",
 				  type: "POST",
-				  data: "fname="+ $("#fname").val() + "lname=" + $("#lname").val(),
+				  data: "fname="+ $("#fname").val() + "&lname=" + $("#lname").val(),
 				  success: function(data) {
 					  if (data=='no') {
 						  alert("Data Intetrity, Click button below to enter new record!");
