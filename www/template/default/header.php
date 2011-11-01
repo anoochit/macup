@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><?=ucwords($ocreq[0]); ?> - Mcdonald's Coupon </title>
-<link rel="stylesheet" type="text/css" href="/template/default/style.css" />
+<link rel="stylesheet" type="text/css" href="/template/default/style.css?<?php echo time(); ?>" />
 <link rel="Stylesheet" type="text/css" href="/include/jquery/css/ui-darkness/jquery-ui-1.8.7.custom.css"/>	
 <script type="text/javascript" src="/include/jquery/js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="/include/jquery-validate/jquery.validate.js"></script>
@@ -32,7 +32,7 @@ if ((count($ocreq)) >1) {
 }
 
 ?>
-<script type="text/javascript" src="<?php echo $jscript; ?>"></script>
+<script type="text/javascript" src="<?php echo $jscript."?".time(); ?>"></script>
 </head>
 <body>
 <?php 

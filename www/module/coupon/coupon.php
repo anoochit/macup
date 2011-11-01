@@ -54,7 +54,7 @@
 <tr>
 	<td> </td>
 	<td><input type="submit" id="add" name="add" value="Add Record" class="submit"></td>
-	<td><div id="result"></div></td>
+	<td colspan="2"><div id="result"></div></td>
 </tr>
 </table>
 </form>
