@@ -5,7 +5,7 @@ $(document).ready(function()
 		//remove all the class add the messagebox classes and start fading
 		$("#msgbox").removeClass().addClass('messagebox').text('Validating....').fadeIn(1000);
 		//check the username exists or not from ajax
-		$.post("/module/signin/ajax_signin.php",{ username:$('#username').val(),password:$('#password').val(),rand:Math.random() } ,function(data)
+		$.post("/signin/check",{ username:$('#username').val(),password:$('#password').val(),rand:Math.random() } ,function(data)
         {
 		  if(data=='yes') //if correct login detail
 		  {

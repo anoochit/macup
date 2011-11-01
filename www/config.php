@@ -19,10 +19,16 @@ $db->PConnect($dbhost,$dbusername,$dbpassword,$dbname);
 
 if (!$db) die("Connection failed");
 
+$db->Execute("SET character_set_results=utf8");
+$db->Execute("SET collation_connection=utf8_general_ci");
+$db->Execute("SET NAMES 'utf8'");
+
+
 ADOdb_Active_Record::SetDatabaseAdapter($db);
 
 require 'include/macup/class.macup.php';
 require 'include/macup/class.user.php';
+require 'include/macup/class.state.php';
 require 'include/macup/class.coupon.php';
 
 
