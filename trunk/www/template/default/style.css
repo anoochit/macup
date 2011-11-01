@@ -109,21 +109,6 @@ div#signin-header {
     margin-left: 60px;
 }
 
-
-/*  may be not in use */
-
-div#dashboard-menu {
-	text-align: right;
-	font-size: 12px;	
-	margin-right: 10px;
-    margin-top: 5px;
-}    
-
-div#header {
-	background: #f9f9f9;
-	margin: 0;
-}
-
 table#dashboard-body  {
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;;
@@ -137,6 +122,52 @@ table#dashboard-body  {
    
 	
 }
+
+div#dashboard-menu {
+	text-align: right;
+	font-size: 12px;	
+	margin-right: 10px;
+    margin-top: 5px;
+}
+
+a {
+color: #555;
+text-decoration:underline;
+}
+
+a:hover {
+color: #000;
+text-decoration:none;
+}
+
+/* grid table */
+table#dashboard-body tbody tr td table#grid tbody tr th {
+	background: #F2F2F2;
+	
+}
+
+table#grid {
+	background: #bbb;
+}
+
+table#grid tbody tr td {
+	background: #fff;
+	padding-right: 10px;
+}
+
+/* grid table */
+
+
+
+
+/*  may be not in use */
+  
+
+div#header {
+	background: #f9f9f9;
+	margin: 0;
+}
+
 
 table#dashboard-body tbody tr th {
 	background: #FFF;
@@ -233,15 +264,7 @@ background: #fff;
 
 
 
-a {
-color: #555;
-text-decoration:underline;
-}
 
-a:hover {
-color: #000;
-text-decoration:none;
-}
 
 table#page-button {
    padding: 5px;

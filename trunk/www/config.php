@@ -2,7 +2,8 @@
 
 require_once('include/adodb5/adodb.inc.php');
 require_once('include/adodb5/adodb-active-record.inc.php');
-require_once('include/adodb5/tojson.inc.php');
+require_once('include/adodb5/adodb-pager-mime.inc.php');
+require_once('include/adodb5/toexport.inc.php');
 
 $dbhost="localhost";
 $dbname="macup";
