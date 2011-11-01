@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `coupon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `coupon` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   `gender` varchar(1) NOT NULL,
   `address` varchar(20) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `coupon` (
   PRIMARY KEY (`id`,`state_id`),
   KEY `fk_coupon_state` (`state_id`),
   CONSTRAINT `fk_coupon_state` FOREIGN KEY (`state_id`) REFERENCES `state` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `coupon` (
 
 LOCK TABLES `coupon` WRITE;
 /*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
-INSERT INTO `coupon` VALUES (0,'dddd dddd','m','ddd','ddd','ddd','ddd','ddd','ddd',1,'33333','333333','anoochit@gmail.com');
+INSERT INTO `coupon` VALUES (1,'dddd dddd','m','ddd','ddd','ddd','ddd','ddd','ddd',1,'33333','333333','anoochit@gmail.com');
 /*!40000 ALTER TABLE `coupon` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-11-01 15:57:29
+-- Dump completed on 2011-11-01 16:03:13
