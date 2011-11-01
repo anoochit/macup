@@ -64,12 +64,12 @@
 			submitHandler: function(form) {
 				jQuery(form).ajaxSubmit({
 					success: function (data) {
-						if (data=='no') {
-							 alert("Cannot save your record!");
-							 document.location='/coupon';
-						} else {
+						if (data=='yes') {
 							alert("Saved your record!");
-							document.location='/coupon';
+							document.location='/coupon';							 
+						} else {
+							alert("Cannot save your record!");
+							 document.location='/coupon';
 						}
 					}
 				});

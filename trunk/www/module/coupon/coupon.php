@@ -15,7 +15,7 @@
 <tr>
 	<td>Gender</td>
 	<td colspan="3">
-		<select name="sex" id="sex" class="required">
+		<select name="gender" id="gender" class="required">
 			<option value="m">Male</option>
 			<option value="f">Female</option>
 		</select>

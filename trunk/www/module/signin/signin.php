@@ -16,7 +16,7 @@
 </tr>
 <tr>
 	<td>
-		<span id="msgbox" style="display:none"></span><br>			
+		<span id="msgbox" style="display:none"></span><br>	
 	</td>
 	<td align="right">
 		<input type="submit"  id="submit" value="SignIn" class="submit">
