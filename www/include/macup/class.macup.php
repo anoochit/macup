@@ -46,7 +46,7 @@ class MacUp {
 
 		// has item to display
 		if ((count($res))>1){
-         echo "<select id='province' name='id='province'>";
+         echo "<select id='province' name='province'>";
          foreach ($res as $item) {
             echo "<option value='".$item->id."'>".$item->state;
          }

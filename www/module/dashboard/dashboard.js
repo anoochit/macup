@@ -1,4 +1,4 @@
-     google.load('visualization', '1', {packages:['gauge']});
+      google.load('visualization', '1', {packages:['gauge']});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = new google.visualization.DataTable();
@@ -13,7 +13,7 @@
         data.setValue(2, 1, 68);
 
         var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-        var options = {width: 600, height: 220, redFrom: 90, redTo: 100,
+        var options = {width: 400, height: 120, redFrom: 90, redTo: 100,
             yellowFrom:75, yellowTo: 90, minorTicks: 5};
         chart.draw(data, options);
       }
