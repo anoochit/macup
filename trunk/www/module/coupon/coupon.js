@@ -63,7 +63,15 @@
 			
 			submitHandler: function(form) {
 				jQuery(form).ajaxSubmit({
-					target: "#result"
+					success: function (data) {
+						if (data=='no') {
+							 alert("Cannot save your record!");
+							 document.location='/coupon';
+						} else {
+							alert("Saved your record!");
+							document.location='/coupon';
+						}
+					}
 				});
 			}
 		});
