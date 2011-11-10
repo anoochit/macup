@@ -1,28 +1,31 @@
--- MySQL dump 10.13  Distrib 5.1.49, for debian-linux-gnu (i686)
+-- phpMyAdmin SQL Dump
+-- version 3.3.7deb5build0.10.10.1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost    Database: macup
--- ------------------------------------------------------
--- Server version	5.1.49-1ubuntu8.1
+-- Host: localhost
+-- Generation Time: Nov 10, 2011 at 12:35 PM
+-- Server version: 5.1.49
+-- PHP Version: 5.3.3-1ubuntu9.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Database: `macup`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `coupon`
 --
 
-DROP TABLE IF EXISTS `coupon`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `coupon` (
+CREATE TABLE IF NOT EXISTS `coupon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(80) NOT NULL,
   `gender` varchar(1) NOT NULL,
@@ -36,80 +39,149 @@ CREATE TABLE `coupon` (
   `zipcode` varchar(5) DEFAULT NULL,
   `tel` varchar(13) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`,`state_id`),
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`state_id`,`user_id`),
   KEY `fk_coupon_state` (`state_id`),
-  CONSTRAINT `fk_coupon_state` FOREIGN KEY (`state_id`) REFERENCES `state` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `fk_coupon_user1` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `coupon`
 --
 
-LOCK TABLES `coupon` WRITE;
-/*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
-INSERT INTO `coupon` VALUES (1,'dddd dddd','m','ddd','ddd','ddd','ddd','ddd','ddd',1,'33333','333333','anoochit@gmail.com');
-/*!40000 ALTER TABLE `coupon` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `coupon` (`id`, `name`, `gender`, `address`, `building`, `soi`, `road`, `district`, `city`, `state_id`, `zipcode`, `tel`, `email`, `user_id`) VALUES
+(1, 'dddd dddd', 'm', 'dddd', 'dddd', 'dddd', 'dddd', 'dddd', 'dddd', 1, '3333', '3333', 'anoochit@gmail.com', 1);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `state`
 --
 
-DROP TABLE IF EXISTS `state`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `state` (
+CREATE TABLE IF NOT EXISTS `state` (
   `id` int(11) NOT NULL,
   `state` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `state`
 --
 
-LOCK TABLES `state` WRITE;
-/*!40000 ALTER TABLE `state` DISABLE KEYS */;
-INSERT INTO `state` VALUES (1,'กรุงเทพมหานคร'),(2,'กระบี่'),(3,'กาญจนบุรี'),(4,'กาฬสินธุ์'),(5,'กำแพงเพชร'),(6,'ขอนแก่น'),(7,'จันทบุรี'),(8,'ฉะเชิงเทรา'),(9,'ชลบุรี'),(10,'ชัยนาท'),(11,'ชัยภูมิ'),(12,'ชุมพร'),(13,'เชียงราย'),(14,'เชียงใหม่'),(15,'ตรัง'),(16,'ตราด'),(17,'ตาก'),(18,'นครนายก'),(19,'นครปฐม'),(20,'นครพนม'),(21,'นครราชสีมา'),(22,'นครศรีธรรมราช'),(23,'นครสวรรค์'),(24,'นนทบุรี'),(25,'นราธิวาส'),(26,'น่าน'),(27,'บึงกาฬ'),(28,'บุรีรัมย์'),(29,'ปทุมธานี'),(30,'ประจวบคีรีขันธ์'),(31,'ปราจีนบุรี'),(32,'ปัตตานี'),(33,'พระนครศรีอยุธยา'),(34,'พะเยา'),(35,'พังงา'),(36,'พัทลุง'),(37,'พิจิตร'),(38,'พิษณุโลก'),(39,'เพชรบุรี'),(40,'เพชรบูรณ์'),(41,'แพร่'),(42,'ภูเก็ต'),(43,'มหาสารคาม'),(44,'มุกดาหาร'),(45,'แม่ฮ่องสอน'),(46,'ยโสธร'),(47,'ยะลา'),(48,'ร้อยเอ็ด'),(49,'ระนอง'),(50,'ระยอง'),(51,'ราชบุรี'),(52,'ลพบุรี'),(53,'ลำปาง'),(54,'ลำพูน'),(55,'เลย'),(56,'ศรีสะเกษ'),(57,'สกลนคร'),(58,'สงขลา'),(59,'สตูล'),(60,'สมุทรปราการ'),(61,'สมุทรสงคราม'),(62,'สมุทรสาคร'),(63,'สระแก้ว'),(64,'สระบุรี'),(65,'สิงห์บุรี'),(66,'สุโขทัย'),(67,'สุพรรณบุรี'),(68,'สุราษฎร์ธานี'),(69,'สุรินทร์'),(70,'หนองคาย'),(71,'หนองบัวลำภู'),(72,'อ่างทอง'),(73,'อำนาจเจริญ'),(74,'อุดรธานี'),(75,'อุตรดิตถ์'),(76,'อุทัยธานี'),(77,'อุบลราชธานี');
-/*!40000 ALTER TABLE `state` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `state` (`id`, `state`) VALUES
+(1, 'กรุงเทพมหานคร'),
+(2, 'กระบี่'),
+(3, 'กาญจนบุรี'),
+(4, 'กาฬสินธุ์'),
+(5, 'กำแพงเพชร'),
+(6, 'ขอนแก่น'),
+(7, 'จันทบุรี'),
+(8, 'ฉะเชิงเทรา'),
+(9, 'ชลบุรี'),
+(10, 'ชัยนาท'),
+(11, 'ชัยภูมิ'),
+(12, 'ชุมพร'),
+(13, 'เชียงราย'),
+(14, 'เชียงใหม่'),
+(15, 'ตรัง'),
+(16, 'ตราด'),
+(17, 'ตาก'),
+(18, 'นครนายก'),
+(19, 'นครปฐม'),
+(20, 'นครพนม'),
+(21, 'นครราชสีมา'),
+(22, 'นครศรีธรรมราช'),
+(23, 'นครสวรรค์'),
+(24, 'นนทบุรี'),
+(25, 'นราธิวาส'),
+(26, 'น่าน'),
+(27, 'บึงกาฬ'),
+(28, 'บุรีรัมย์'),
+(29, 'ปทุมธานี'),
+(30, 'ประจวบคีรีขันธ์'),
+(31, 'ปราจีนบุรี'),
+(32, 'ปัตตานี'),
+(33, 'พระนครศรีอยุธยา'),
+(34, 'พะเยา'),
+(35, 'พังงา'),
+(36, 'พัทลุง'),
+(37, 'พิจิตร'),
+(38, 'พิษณุโลก'),
+(39, 'เพชรบุรี'),
+(40, 'เพชรบูรณ์'),
+(41, 'แพร่'),
+(42, 'ภูเก็ต'),
+(43, 'มหาสารคาม'),
+(44, 'มุกดาหาร'),
+(45, 'แม่ฮ่องสอน'),
+(46, 'ยโสธร'),
+(47, 'ยะลา'),
+(48, 'ร้อยเอ็ด'),
+(49, 'ระนอง'),
+(50, 'ระยอง'),
+(51, 'ราชบุรี'),
+(52, 'ลพบุรี'),
+(53, 'ลำปาง'),
+(54, 'ลำพูน'),
+(55, 'เลย'),
+(56, 'ศรีสะเกษ'),
+(57, 'สกลนคร'),
+(58, 'สงขลา'),
+(59, 'สตูล'),
+(60, 'สมุทรปราการ'),
+(61, 'สมุทรสงคราม'),
+(62, 'สมุทรสาคร'),
+(63, 'สระแก้ว'),
+(64, 'สระบุรี'),
+(65, 'สิงห์บุรี'),
+(66, 'สุโขทัย'),
+(67, 'สุพรรณบุรี'),
+(68, 'สุราษฎร์ธานี'),
+(69, 'สุรินทร์'),
+(70, 'หนองคาย'),
+(71, 'หนองบัวลำภู'),
+(72, 'อ่างทอง'),
+(73, 'อำนาจเจริญ'),
+(74, 'อุดรธานี'),
+(75, 'อุตรดิตถ์'),
+(76, 'อุทัยธานี'),
+(77, 'อุบลราชธานี');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(20) NOT NULL,
   `password` varchar(50) NOT NULL,
   `enable` varchar(1) NOT NULL DEFAULT '1',
   `admin` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `user`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','d033e22ae348aeb5660fc2140aec35850c4da997','1','1'),(2,'user','12dea96fec20593566ab75692c9949596833adc9','1','0');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `user` (`id`, `login`, `password`, `enable`, `admin`) VALUES
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', '1'),
+(2, 'user', '12dea96fec20593566ab75692c9949596833adc9', '1', '0'),
+(3, 'desk1', '3babb217bcc8ea49c69f6322d63aaf346b2dde0c', '1', '0'),
+(4, 'desk2', '3babb217bcc8ea49c69f6322d63aaf346b2dde0c', '1', '0'),
+(5, 'desk3', '3babb217bcc8ea49c69f6322d63aaf346b2dde0c', '1', '0'),
+(6, 'desk4', '3babb217bcc8ea49c69f6322d63aaf346b2dde0c', '1', '0'),
+(7, 'desk5', '3babb217bcc8ea49c69f6322d63aaf346b2dde0c', '1', '0');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+--
+-- Constraints for dumped tables
+--
 
--- Dump completed on 2011-11-01 16:03:13
+--
+-- Constraints for table `coupon`
+--
+ALTER TABLE `coupon`
+  ADD CONSTRAINT `fk_coupon_state` FOREIGN KEY (`state_id`) REFERENCES `state` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_coupon_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;

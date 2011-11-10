@@ -40,6 +40,25 @@ class MacUp {
 		return $res;
 	}
 	
+	function getUser(){
+		$obuser=new MacUser();
+		$res=$obuser->Find("id > 0");
+		return $res;
+	}
+	
+	function getUserInfoByID($id) {
+		$obuser=new MacUser();
+		$res=$obuser->Load("id = ".$id."");
+		return $obuser;
+	}
+	
+	function getUserStatByID($id) {
+		$obuser=new MacCoupon();
+		$res=$obuser->Find("user_id = ".$id."");
+		return $res;
+	}
+	
+	
 	function getStateOption() {
 		$obstate= new MacState();
 		$res=$obstate->Find("id > 0");
