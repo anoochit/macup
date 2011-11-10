@@ -14,6 +14,8 @@
 	$postcode=$_POST['postcode'];
 	$tel=$_POST['tel'];
 	$email=$_POST['email'];
+	
+	//$db->debug=1;
 
 	$obcoupon=new MacCoupon();
 	$obcoupon->name=trim($fname)." ".trim($lname);
@@ -28,6 +30,7 @@
 	$obcoupon->zipcode=trim($postcode);
 	$obcoupon->tel=trim($tel);
 	$obcoupon->email=trim($email);
+	$obcoupon->user_id=$_SESSION["MCID"];
 	$res = $obcoupon->Save();
 
 	if (!$res) {
