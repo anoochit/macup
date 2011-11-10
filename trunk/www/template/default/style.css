@@ -8,14 +8,14 @@ body {
 
 .login-container {
 	margin: 5em auto;
-	width: 450px;
+	width: 360px;
 	margin-top: 90;
 }
 
 div.copy {
 	text-align: center;
 	font-size: 10px;
-	margin-left: -40px;
+	
 }
 
 label.error {
