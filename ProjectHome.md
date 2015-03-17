@@ -1,0 +1,1 @@
+MaCup is web application for McDonald's coupon data entry.
